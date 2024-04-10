@@ -1,5 +1,5 @@
 import pandas as pd
-import pickle
+import joblib
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
@@ -20,4 +20,4 @@ X_test = sc.fit_transform(X_test)
 classifier = RandomForestClassifier()
 classifier.fit(X_train, y_train)
 
-pickle.dump(classifier, open("model.pkl", "wb"))
+joblib.dump(classifier, "model.joblib")

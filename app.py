@@ -1,10 +1,10 @@
 import numpy as np
-import pickle
+import joblib
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
-model = pickle.load(open("model.pkl", "rb"))
+model = joblib.load("model.joblib")
 
 @app.route("/")
 def Home():
